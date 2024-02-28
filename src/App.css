@@ -1,3 +1,8 @@
+/* App primary color variable */
+:root {
+  --primary: #6b47ed;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Over write antd default style for Switch component */
+.ant-switch:not(.ant-switch-checked) .ant-switch-handle::before {
+  background-color: var(--primary) !important; /* Set to black when unchecked */
+}
+
+.ant-switch:not(.ant-switch-checked) {
+  background-color: white !important; /* Handle background to white when unchecked */
+  border: 2px solid rgb(220, 217, 217) !important; /* Handle border to 2px solid gray when unchecked */
+}
+
+/* Since we added a border to the switch button, we also need to change handle position */
+/* Adjust the handle position when unchecked */
+.ant-switch:not(.ant-switch-checked) .ant-switch-handle {
+  top: 2px;
+  left: 2px;
 }
