@@ -17,8 +17,8 @@ function App() {
       ...preSetData,
       toolsUsed: convertToolsUsed(preSetData.toolsUsed)
     });
-  }, [form]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   //Function Overloading
   function convertToolsUsed(data: string[]): string;
   function convertToolsUsed(data: string): string[];
