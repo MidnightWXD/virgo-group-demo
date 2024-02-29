@@ -1,0 +1,84 @@
+/* App primary color variable */
+:root {
+    --primary: #6b47ed;
+}
+
+.floating-label-input {
+    position: relative;
+    padding-top: 18px;
+    border-radius: 8px;
+    height: 46px;
+}
+  
+.floating-label-input label {
+    position: absolute;
+    left: 13px;
+    top: 22px;
+    color: #979797;
+    transition: all 0.2s;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+.floating-label-input input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.floating-label-input.focused label,
+.floating-label-input input:not(:placeholder-shown) label {
+    top: 20px;
+    font-size: 8px;
+    color: #979797;
+}
+
+.floating-label-input input:focus {
+    outline: none;
+    border-color: #979797;
+    border-color: var(--primary);
+    padding-top: 12px;
+    font-size: 16px;
+    padding-bottom: 2px;
+}
+
+.floating-label-input input:hover {
+    border-color: var(--primary);
+}
+
+/* Ensure the label stays at the top after typing */
+.floating-label-input input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 12px;
+    font-size: 8px;
+    color: #333;
+}
+
+/* Ensure the input value stays at the bottom after typing */
+.floating-label-input input:not(:placeholder-shown) {
+    padding-top: 14px;
+    font-size: 16px;
+    padding-bottom: 2px;
+}
+
+/* Disabled state styles */
+.floating-label-input.disabled input,
+.floating-label-input input:disabled {
+    border-color: #d9d9d9; /* Light grey border */
+    background-color: #f5f5f5; /* Light grey background */
+    color: #a8a8a8; /* Dimmed text color */
+}
+
+.floating-label-input.disabled label,
+.floating-label-input input:disabled + label {
+    color: #a8a8a8; /* Dimmed label color */
+    pointer-events: none; /* Prevent mouse events on label */
+}
+
+/* Ensure the label does not float when disabled and input is not empty */
+.floating-label-input.disabled input:not(:placeholder-shown) + label {
+    top: 22px; /* Reset label position */
+    font-size: 16px; /* Reset label font size */
+    color: #a8a8a8; /* Dimmed label color */
+}

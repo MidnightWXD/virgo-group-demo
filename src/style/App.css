@@ -1,0 +1,137 @@
+/* App primary color variable */
+:root {
+  --primary: #6b47ed;
+  --secondary: #D4CCF7;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Over write antd default style for Switch component */
+.ant-switch:not(.ant-switch-checked) .ant-switch-handle::before {
+  background-color: var(--primary) !important; /* Set to black when unchecked */
+}
+
+.ant-switch:not(.ant-switch-checked) {
+  background-color: white !important; /* Handle background to white when unchecked */
+  border: 2px solid rgb(220, 217, 217) !important; /* Handle border to 2px solid gray when unchecked */
+}
+
+/* Since we added a border to the switch button, we also need to change handle position */
+/* Adjust the handle position when unchecked */
+.ant-switch:not(.ant-switch-checked) .ant-switch-handle {
+  top: 2px;
+  left: 2px;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after {
+  background-color: var(--primary);
+}
+
+.ant-radio-wrapper-checked span {
+  font-weight: 600;
+  color: #000000; /* Black color for disabled state */
+}
+
+.ant-radio-wrapper-checked .ant-radio-disabled .ant-radio-inner::after {
+  background-color: #D8D8D8 !important; /* Light gray background color for disabled state */
+}
+
+.ant-radio-checked .ant-radio-input:disabled + .ant-radio-inner {
+  background-color: #D8D8D8; /* Light gray background color for disabled state */
+}
+
+.ant-radio-input:disabled + .ant-radio-inner {
+  background-color: white; /* Light gray background color for disabled state */
+}
+
+.ant-radio-disabled .ant-radio-inner {
+  border-color: #D8D8D8; /* Gray border color for disabled state */
+  background-color: white; /* Light gray background color for disabled state */
+}
+
+/* Over write antd default style for Checkbox component */
+.ant-checkbox .ant-checkbox-inner {
+  border-color: var(--primary);
+  border-radius: 100%;
+}
+
+.ant-checkbox-checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.ant-checkbox .ant-checkbox-inner:after {
+  border-color: var(--primary);
+  border-radius: 100%;
+}
+
+
+/* Ensure the check mark is not visible in the disabled state */
+.ant-checkbox-disabled .ant-checkbox-inner:after {
+  content: none;
+}
+.ant-checkbox-disabled .ant-checkbox-inner {
+  border-color: #D8D8D8; /* Gray border color for disabled state */
+  background-color: white; /* Light gray background color for disabled state */
+}
+
+.ant-checkbox-wrapper-checked .ant-checkbox-disabled .ant-checkbox-inner {
+  border-color: #D8D8D8; /* Gray border color for disabled state */
+  background-color: #D8D8D8; /* Light gray background color for disabled state */
+}
+
+.ant-checkbox-wrapper-checked span {
+  font-weight: 600;
+  color: #000000; /* Black color for disabled state */
+}
+
+/* Custom button disabled state */
+.ant-btn[disabled] {
+  background-color: var(--secondary); /* Light gray background color for disabled state */
+  border-color: var(--secondary);; /* Gray border color for disabled state */
+  color: white; /* Black color for disabled state */
+}
